@@ -1,0 +1,35 @@
+{
+  "$schema": "https://raw.githubusercontent.com/tauri-apps/tauri/dev/crates/tauri-config-schema/schema.json",
+  "productName": "LeadHunter",
+  "version": "0.1.0",
+  "identifier": "com.leadhunter.app",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "LeadHunter",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 1280,
+        "minHeight": 800,
+        "resizable": true,
+        "decorations": true,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "icon": [
+      "icons/icon.png"
+    ]
+  }
+}
