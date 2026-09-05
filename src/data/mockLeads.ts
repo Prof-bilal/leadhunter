@@ -618,6 +618,17 @@ export const mockCampaigns = [
   { id: 'c3', name: 'SaaS Demo Requests', pending: 8, sent: 15, replies: 3 },
 ];
 
+export const mockOutreach = [
+  { id: 'o1', leadId: '1', leadName: 'Spice Garden Restaurant', campaign: 'Restaurant Outreach', subject: 'Your website could convert 3x more customers', status: 'replied' as const, sentAt: '2h ago', reply: 'Thanks for reaching out! We\'d love to learn more.' },
+  { id: 'o2', leadId: '2', leadName: 'Digital Wave Agency', campaign: 'Agency Growth', subject: 'Quick question about your site speed', status: 'sent' as const, sentAt: '5h ago', reply: null },
+  { id: 'o3', leadId: '3', leadName: 'CloudSync Pro', campaign: 'SaaS Demo Requests', subject: 'I found 3 issues hurting your conversions', status: 'replied' as const, sentAt: '1d ago', reply: 'Can you share more details about the issues?' },
+  { id: 'o4', leadId: '4', leadName: 'Burger Hub', campaign: 'Restaurant Outreach', subject: 'Your competitors are outranking you', status: 'opened' as const, sentAt: '1d ago', reply: null },
+  { id: 'o5', leadId: '5', leadName: 'NexaTech Solutions', campaign: 'Agency Growth', subject: 'Free audit for your portfolio site', status: 'sent' as const, sentAt: '2d ago', reply: null },
+  { id: 'o6', leadId: '6', leadName: 'Fresh Bites Cafe', campaign: 'Restaurant Outreach', subject: 'Boost your online orders by 40%', status: 'bounced' as const, sentAt: '3d ago', reply: null },
+  { id: 'o7', leadId: '7', leadName: 'DataPulse Analytics', campaign: 'SaaS Demo Requests', subject: 'Your SEO score is 23/100 — here\'s why', status: 'replied' as const, sentAt: '3d ago', reply: 'We\'ve been meaning to fix that. Let\'s talk.' },
+  { id: 'o8', leadId: '8', leadName: 'Urban Eats', campaign: 'Restaurant Outreach', subject: 'I built a site that doubled this restaurant\'s traffic', status: 'pending' as const, sentAt: null, reply: null },
+];
+
 export const mockWeeklyStats = {
   leadsFound: 47,
   auditsCompleted: 12,

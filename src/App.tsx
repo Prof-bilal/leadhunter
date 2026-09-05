@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Sidebar } from './components/layout/Sidebar';
-import { TopBar } from './components/layout/TopBar';
 import { CommandPalette } from './components/navigation/CommandPalette';
 import { ToastContainer } from './components/ui/Toast';
 import { Dashboard } from './pages/Dashboard';
@@ -10,6 +9,8 @@ import { LeadProfile } from './pages/LeadProfile';
 import { Audit } from './pages/Audit';
 import { SalesPitch } from './pages/SalesPitch';
 import { Settings } from './pages/Settings';
+import { Campaigns } from './pages/Campaigns';
+import { Outreach } from './pages/Outreach';
 import { Page, Lead } from './types';
 import { mockLeadService } from './lib/mockServices';
 import { useToast } from './hooks/useToast';
@@ -153,6 +154,10 @@ export default function App() {
         );
       case 'settings':
         return <Settings onNavigate={handleNavigate} />;
+      case 'campaigns':
+        return <Campaigns onNavigate={handleNavigate} />;
+      case 'outreach':
+        return <Outreach onNavigate={handleNavigate} />;
       default:
         return <Dashboard onNavigate={handleNavigate} />;
     }
@@ -160,7 +165,6 @@ export default function App() {
 
   return (
     <div className="h-screen w-screen flex flex-col overflow-hidden bg-[var(--color-bg)]">
-      <TopBar onOpenCommandPalette={() => setCommandPaletteOpen(true)} />
       <div className="flex-1 flex min-h-0">
         <Sidebar currentPage={currentPage} onNavigate={handleNavigate} />
         <main className="flex-1 overflow-hidden min-w-0">

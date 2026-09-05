@@ -12,38 +12,29 @@ const navItems: { id: Page; label: string; icon: React.ReactNode }[] = [
   { id: 'find-leads', label: 'Find Leads', icon: <Search size={18} /> },
   { id: 'leads', label: 'Leads', icon: <FolderOpen size={18} /> },
   { id: 'audit', label: 'Audits', icon: <BarChart3 size={18} /> },
-  { id: 'leads', label: 'Campaigns', icon: <Target size={18} /> },
-  { id: 'leads', label: 'Outreach', icon: <Send size={18} /> },
+  { id: 'campaigns', label: 'Campaigns', icon: <Target size={18} /> },
+  { id: 'outreach', label: 'Outreach', icon: <Send size={18} /> },
 ];
 
 export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
   return (
     <div className="w-[220px] h-full bg-[var(--color-surface)] border-r border-[var(--color-border)] flex flex-col shrink-0">
-      {/* Logo */}
-      <div className="h-12 flex items-center px-5 border-b border-[var(--color-border)]">
-        <div className="flex items-center gap-2.5">
-          <div className="w-7 h-7 rounded-[var(--radius-md)] bg-[var(--color-accent)] flex items-center justify-center">
-            <Target size={14} className="text-white" />
-          </div>
-          <span className="text-sm font-semibold text-[var(--color-text-primary)] tracking-tight">LeadHunter</span>
-        </div>
-      </div>
-
       {/* Navigation */}
-      <nav className="flex-1 py-3 px-3 overflow-y-auto">
+      <nav className="flex-1 py-3 px-5 overflow-y-auto">
         {navItems.map((item, index) => {
           const isActive = currentPage === item.id;
           return (
             <button
               key={`${item.label}-${index}`}
               onClick={() => onNavigate(item.id)}
+              style={isActive ? { backgroundColor: 'color-mix(in srgb, var(--color-accent) 10%, transparent)' } : undefined}
               className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-[var(--radius-md)] text-sm transition-all duration-[0.1s] cursor-pointer mb-1 ${
                 isActive
-                  ? 'bg-[var(--color-surface-active)] text-[var(--color-text-primary)] font-medium border-l-2 border-[var(--color-accent)]'
-                  : 'text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-hover)] hover:text-[var(--color-text-primary)] border-l-2 border-transparent'
+                  ? 'text-[var(--color-accent)] font-medium'
+                  : 'text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-hover)] hover:text-[var(--color-text-primary)]'
               }`}
             >
-              <span className={isActive ? 'text-[var(--color-accent)]' : ''}>{item.icon}</span>
+              <span className={isActive ? 'text-[var(--color-accent)]' : 'text-[var(--color-text-muted)]'}>{item.icon}</span>
               {item.label}
             </button>
           );
@@ -51,16 +42,17 @@ export function Sidebar({ currentPage, onNavigate }: SidebarProps) {
       </nav>
 
       {/* Settings */}
-      <div className="px-3 py-3 border-t border-[var(--color-border)]">
+      <div className="px-5 py-3 border-t border-[var(--color-border)]">
         <button
           onClick={() => onNavigate('settings')}
+          style={currentPage === 'settings' ? { backgroundColor: 'color-mix(in srgb, var(--color-accent) 10%, transparent)' } : undefined}
           className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-[var(--radius-md)] text-sm transition-all duration-[0.1s] cursor-pointer ${
             currentPage === 'settings'
-              ? 'bg-[var(--color-surface-active)] text-[var(--color-text-primary)] font-medium border-l-2 border-[var(--color-accent)]'
-              : 'text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-hover)] hover:text-[var(--color-text-primary)] border-l-2 border-transparent'
+              ? 'text-[var(--color-accent)] font-medium'
+              : 'text-[var(--color-text-secondary)] hover:bg-[var(--color-surface-hover)] hover:text-[var(--color-text-primary)]'
           }`}
         >
-          <span className={currentPage === 'settings' ? 'text-[var(--color-accent)]' : ''}><Settings size={18} /></span>
+          <span className={currentPage === 'settings' ? 'text-[var(--color-accent)]' : 'text-[var(--color-text-muted)]'}><Settings size={18} /></span>
           Settings
         </button>
       </div>

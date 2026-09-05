@@ -19,7 +19,7 @@ export function Dashboard({ onNavigate }: DashboardProps) {
       <div className="max-w-[960px] mx-auto">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-semibold text-[var(--color-text-primary)] tracking-tight mb-1">Dashboard</h1>
+          <h1 className="text-2xl font-semibold text-[var(--color-text-primary)] tracking-tight mb-1">LeadHunter</h1>
           <p className="text-sm text-[var(--color-text-secondary)]">What should I do next?</p>
         </div>
 

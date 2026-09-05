@@ -60,7 +60,7 @@ export interface SearchResult {
   query: string;
 }
 
-export type Page = 'dashboard' | 'find-leads' | 'leads' | 'lead-detail' | 'audit' | 'sales-pitch' | 'settings';
+export type Page = 'dashboard' | 'find-leads' | 'leads' | 'lead-detail' | 'audit' | 'sales-pitch' | 'settings' | 'campaigns' | 'outreach';
 
 export interface AppState {
   currentPage: Page;
